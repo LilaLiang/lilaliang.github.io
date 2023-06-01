@@ -16,24 +16,24 @@
   <meta name="author" content="Lila Liang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Some tips on how to use Hexo Blog.This is a really powerful tool to build and maintain your blog!">
+    <meta name="description" content="This note provides an overview of key concepts related to APIs, HTTP, REST, headers, stateless protocols, CRUD operations, JSON, cacheability, layered systems, and Curl.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to Create Content on a Hexo Blog">
-<meta property="og:url" content="https://lilaliang.github.io/2023/05/27/1/index.html">
+<meta property="og:title" content="What is API?">
+<meta property="og:url" content="https://lilaliang.github.io/2023/06/01/2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Some tips on how to use Hexo Blog.This is a really powerful tool to build and maintain your blog!">
+<meta property="og:description" content="This note provides an overview of key concepts related to APIs, HTTP, REST, headers, stateless protocols, CRUD operations, JSON, cacheability, layered systems, and Curl.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://lilaliang.github.io/img/hexo.png">
-<meta property="article:published_time" content="2023-05-27T07:05:18.000Z">
-<meta property="article:modified_time" content="2023-06-01T07:57:24.944Z">
+<meta property="og:image" content="https://lilaliang.github.io/img/API.png">
+<meta property="article:published_time" content="2023-06-01T08:25:48.000Z">
+<meta property="article:modified_time" content="2023-06-01T08:30:32.654Z">
 <meta property="article:author" content="Lila Liang">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="Concepts">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://lilaliang.github.io/img/hexo.png">
+<meta name="twitter:image" content="https://lilaliang.github.io/img/API.png">
   
   
   
-  <title>How to Create Content on a Hexo Blog - Hexo</title>
+  <title>What is API? - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="How to Create Content on a Hexo Blog"></span>
+            <span id="subtitle" data-typed-text="What is API?"></span>
           
         </div>
 
@@ -210,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-27 15:05" pubdate>
-          May 27, 2023 pm
+        <time datetime="2023-06-01 16:25" pubdate>
+          June 1, 2023 pm
         </time>
       </span>
     
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.7k words
+          3.1k words
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          23 mins
+          27 mins
         
       </span>
     
@@ -271,40 +271,61 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">How to Create Content on a Hexo Blog</h1>
+            <h1 style="display: none">What is API?</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Some tips on how to use Hexo Blog.This is a really powerful tool to build and maintain your blog!</p>
-<span id="more"></span>
-<h2 id="Commandlines"><a href="#Commandlines" class="headerlink" title="Commandlines:"></a>Commandlines:</h2><ul>
-<li><p><code>$ hexo new (title)</code>: Creates a new post with the specified title. For example, running <code>hexo new a</code> will generate a new post titled “a” in the <code>source/_posts</code> directory.</p>
-</li>
-<li><p>After running the command, navigate to the <code>source/_posts</code> folder, and you will find the newly created file named “a”. You can open this file and write your content in it.</p>
-</li>
-<li><p><code>$ hexo server</code> or <code>$ hexo s</code>: Starts a local server for previewing your website.</p>
-</li>
-<li><p><code>$ hexo new draft (title)</code>: Creates a new draft post with the specified title. Draft posts are not visible when previewing your website online.</p>
-</li>
-<li><p><code>$ hexo server --draft</code>: Starts the local server and allows you to preview your draft posts.</p>
-</li>
-<li><p><code>$ hexo publish b</code>: Publishes a draft post named “b” by moving it from the <code>source/_drafts</code> folder to the <code>source/_posts</code> folder, making it visible in your website preview.</p>
-</li>
-<li><p><code>$ hexo new page c</code>: Creates a new webpage named “c” instead of a post. The webpage is typically generated in the <code>source</code> directory, and you can customize its layout separately.</p>
-</li>
-<li><p><code>$ hexo new d</code>: Creates a new post named “d” by default. If you don’t specify a category, it will be considered a post.</p>
+                <p>This note provides an overview of key concepts related to APIs, HTTP, REST, headers, stateless protocols, CRUD operations, JSON, cacheability, layered systems, and Curl. <span id="more"></span></p>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ul>
+<li><strong>Definition:</strong> API stands for Application Programming Interface. It refers to a set of rules and protocols that allow different software applications to communicate with each other.</li>
+<li><strong>Types of APIs:</strong><ul>
+<li>Framework APIs: APIs provided by frameworks that allow developers to extend and customize the functionality of the framework.</li>
+<li>Package and Library APIs: APIs provided by packages and libraries that solve common problems and provide reusable code.</li>
+<li>Remote APIs: APIs like REST and GraphQL that allow communication with remote servers over a network.</li>
+<li>Web-based APIs: APIs that are accessed through web protocols, typically using HTTP.</li>
+</ul>
 </li>
 </ul>
-<h2 id="Frontmatter"><a href="#Frontmatter" class="headerlink" title="Frontmatter:"></a>Frontmatter:</h2><p>Frontmatter is metadata located at the beginning of a post or page file. It includes fields such as title, date, tags, and categories. You can modify these fields to customize your post or page content. Additionally, you can use the scaffolds feature to define custom frontmatter templates.</p>
-<h2 id="Tag-Plugins"><a href="#Tag-Plugins" class="headerlink" title="Tag Plugins:"></a>Tag Plugins:</h2><p>Hexo supports various tag plugins that provide additional functionality for content generation. You can refer to the <a target="_blank" rel="noopener" href="https://hexo.io/docs/tag-plugins.html">Hexo Tag Plugins documentation</a> for more information on how to use these plugins effectively.</p>
-<h2 id="Codeblock"><a href="#Codeblock" class="headerlink" title="Codeblock:"></a>Codeblock:</h2><p>To include code blocks in your posts, use the <code>&#123;% codeblock %&#125;</code> tag followed by the desired language. Within the code block, you can write your code.</p>
-<h2 id="YouTube"><a href="#YouTube" class="headerlink" title="YouTube:"></a>YouTube:</h2><p>You can embed YouTube videos in your posts using the <code>&#123;% youtube %&#125;</code> tag followed by the YouTube video ID.</p>
-<h2 id="Assets-Folders"><a href="#Assets-Folders" class="headerlink" title="Assets Folders:"></a>Assets Folders:</h2><p>To include images in your posts, you can enable the “post asset folder” option in the <code>config.yml</code> file. Then, you can use tags like <code>&#123;% asset_img %&#125;</code> to include images directly, <code>&#123;% asset_link %&#125;</code> to create links to assets, and <code>&#123;% asset_path %&#125;</code> to retrieve the path of an asset.</p>
-<h2 id="Themes"><a href="#Themes" class="headerlink" title="Themes:"></a>Themes:</h2><p>To change the theme of your Hexo website, clone a theme’s GitHub repository and update the <code>theme</code> value in the <code>config.yml</code> file.</p>
-<h2 id="Creating-a-Theme"><a href="#Creating-a-Theme" class="headerlink" title="Creating a Theme:"></a>Creating a Theme:</h2><p>To create a custom theme, navigate to the <code>themes</code> folder and create a new folder for your theme. Inside the theme folder, create four subfolders: <code>languages</code>, <code>layout</code>, <code>scripts</code>, and <code>source</code>. Customize the layout files (<code>layout.ejs</code>, <code>index.ejs</code>, <code>post.ejs</code>, and <code>page.ejs</code>) to control the appearance of your website.</p>
-<h2 id="Partials"><a href="#Partials" class="headerlink" title="Partials:"></a>Partials:</h2><p>To create reusable components, create a <code>partials</code> folder within the <code>layout</code> folder. Inside the <code>partials</code> folder, create individual files for different parts of your site, such as headers, footers, etc. Write the necessary code in these files, and then include them in the layout files using the <code>&lt;%- partial() %&gt;</code> tag.</p>
-<h2 id="Best-Hexo-Tutorials"><a href="#Best-Hexo-Tutorials" class="headerlink" title="Best Hexo Tutorials:"></a>Best Hexo Tutorials:</h2><p>Here is a playlist of the best Hexo tutorials I have found: <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOMJR6D25ishrSedvsguVSm">Hexo Tutorial Playlist</a></p>
+<h2 id="HTTP-and-Verbs"><a href="#HTTP-and-Verbs" class="headerlink" title="HTTP and Verbs"></a>HTTP and Verbs</h2><ul>
+<li><strong>HTTP:</strong> HTTP stands for Hypertext Transfer Protocol. It is a protocol that defines the expectations for communication between clients and servers.</li>
+<li><strong>HTTP Verbs:</strong><ul>
+<li>GET: Used to receive information and retrieve data from the server (read operation).</li>
+<li>POST: Used to submit data to the server and receive a response (create operation).</li>
+<li>PUT: Used to update existing data on the server.</li>
+<li>PATCH: Used to partially update existing data on the server.</li>
+<li>DELETE: Used to delete specific resources from the server.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Stateless-Protocol"><a href="#Stateless-Protocol" class="headerlink" title="Stateless Protocol"></a>Stateless Protocol</h2><ul>
+<li><strong>Definition:</strong> A stateless protocol is a type of communication protocol in which each transaction between a client and a server is independent and self-contained. The server does not retain any information about the client’s previous interactions or the current state of the client.</li>
+<li><strong>Advantages:</strong> Stateless protocols are scalable, lightweight, and promote fault tolerance.</li>
+<li><strong>Limitations:</strong> They are not suitable for scenarios that require maintaining a continuous session or context across multiple requests.</li>
+</ul>
+<h2 id="Headers"><a href="#Headers" class="headerlink" title="Headers"></a>Headers</h2><ul>
+<li><strong>Definition:</strong> Headers are specific sections of data that precede the main content or payload of a message or packet.</li>
+<li><strong>Function:</strong> Headers provide important information and metadata about the message, facilitating its interpretation and processing by the receiving entity.</li>
+<li><strong>Examples:</strong> In the context of HTTP, headers include fields like “Host,” “User-Agent,” and “Content-Type.”</li>
+</ul>
+<h2 id="REST-and-CRUD"><a href="#REST-and-CRUD" class="headerlink" title="REST and CRUD"></a>REST and CRUD</h2><ul>
+<li><strong>REST:</strong> REST stands for Representational State Transfer. It is an architectural style for designing networked applications and APIs.</li>
+<li><strong>CRUD:</strong> CRUD stands for Create, Read, Update, and Delete, which are the basic operations performed on data.</li>
+<li><strong>Relationship:</strong> RESTful APIs map the CRUD operations to appropriate HTTP methods (POST, GET, PUT&#x2F;PATCH, DELETE) to provide a consistent and intuitive interface for interacting with resources.</li>
+</ul>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><ul>
+<li><strong>Definition:</strong> JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is commonly used for structuring data in APIs and exchanging information between a client and a server.</li>
+</ul>
+<h2 id="Layered-System"><a href="#Layered-System" class="headerlink" title="Layered System"></a>Layered System</h2><ul>
+<li><strong>Definition:</strong> A layered system is an architectural style where components are organized in layers, and each layer has specific responsibilities. Communication between layers is well-defined and follows certain protocols.</li>
+</ul>
+<h2 id="Cacheability"><a href="#Cacheability" class="headerlink" title="Cacheability"></a>Cacheability</h2><ul>
+<li><strong>Definition:</strong> Cacheability refers to the capability of storing and reusing previously obtained responses from a server. Caching can improve performance by reducing the need for repeated requests to the server.</li>
+</ul>
+<h2 id="Curl"><a href="#Curl" class="headerlink" title="Curl"></a>Curl</h2><ul>
+<li><strong>Definition:</strong> Curl is a command-line tool and library used for making requests to web servers and transferring data using various protocols such as HTTP, HTTPS, FTP, SMTP, and more.</li>
+<li><strong>Use Cases:</strong> Curl is used for sending HTTP requests, testing APIs, downloading&#x2F;uploading files, scripting and automation, and debugging network connectivity issues.</li>
+</ul>
 
                 
               </div>
@@ -317,7 +338,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/hexo/">#hexo</a>
+        <a href="/tags/Concepts/">#Concepts</a>
       
     </div>
   
@@ -329,8 +350,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>How to Create Content on a Hexo Blog</div>
-      <div>https://lilaliang.github.io/2023/05/27/1/</div>
+      <div>What is API?</div>
+      <div>https://lilaliang.github.io/2023/06/01/2/</div>
     </div>
     <div class="license-meta">
       
@@ -342,7 +363,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>May 27, 2023</div>
+          <div>June 1, 2023</div>
         </div>
       
       
@@ -374,18 +395,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/06/01/2/" title="What is API?">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">What is API?</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/26/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2023/05/27/1/" title="How to Create Content on a Hexo Blog">
+                        <span class="hidden-mobile">How to Create Content on a Hexo Blog</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
