@@ -1,4 +1,4 @@
-# Hexo Configuration
+# hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
@@ -7,7 +7,7 @@ title: Hexo
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author:  Lila Liang
 language: en
 timezone: ''
 

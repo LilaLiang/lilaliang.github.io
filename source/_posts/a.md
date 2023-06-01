@@ -1,0 +1,59 @@
+---
+title: How to Create Content on a Hexo Blog
+date: 2023-05-27 15:05:18
+tags: [hexo]
+---
+## How to Create Content on a Hexo Blog
+
+## Commandlines:
+- `$ hexo new (title)`: Creates a new post with the specified title. For example, running `hexo new a` will generate a new post titled "a" in the `source/_posts` directory.
+
+- After running the command, navigate to the `source/_posts` folder, and you will find the newly created file named "a". You can open this file and write your content in it.
+
+- `$ hexo server` or `$ hexo s`: Starts a local server for previewing your website.
+
+- `$ hexo new draft (title)`: Creates a new draft post with the specified title. Draft posts are not visible when previewing your website online.
+
+- `$ hexo server --draft`: Starts the local server and allows you to preview your draft posts.
+
+- `$ hexo publish b`: Publishes a draft post named "b" by moving it from the `source/_drafts` folder to the `source/_posts` folder, making it visible in your website preview.
+
+- `$ hexo new page c`: Creates a new webpage named "c" instead of a post. The webpage is typically generated in the `source` directory, and you can customize its layout separately.
+
+- `$ hexo new d`: Creates a new post named "d" by default. If you don't specify a category, it will be considered a post.
+
+## Frontmatter:
+
+Frontmatter is metadata located at the beginning of a post or page file. It includes fields such as title, date, tags, and categories. You can modify these fields to customize your post or page content. Additionally, you can use the scaffolds feature to define custom frontmatter templates.
+
+## Tag Plugins:
+
+Hexo supports various tag plugins that provide additional functionality for content generation. You can refer to the [Hexo Tag Plugins documentation](https://hexo.io/docs/tag-plugins.html) for more information on how to use these plugins effectively.
+
+## Codeblock:
+
+To include code blocks in your posts, use the `{% codeblock %}` tag followed by the desired language. Within the code block, you can write your code.
+
+## YouTube:
+
+You can embed YouTube videos in your posts using the `{% youtube %}` tag followed by the YouTube video ID.
+
+## Assets Folders:
+
+To include images in your posts, you can enable the "post asset folder" option in the `config.yml` file. Then, you can use tags like `{% asset_img %}` to include images directly, `{% asset_link %}` to create links to assets, and `{% asset_path %}` to retrieve the path of an asset.
+
+## Themes:
+
+To change the theme of your Hexo website, clone a theme's GitHub repository and update the `theme` value in the `config.yml` file.
+
+## Creating a Theme:
+
+To create a custom theme, navigate to the `themes` folder and create a new folder for your theme. Inside the theme folder, create four subfolders: `languages`, `layout`, `scripts`, and `source`. Customize the layout files (`layout.ejs`, `index.ejs`, `post.ejs`, and `page.ejs`) to control the appearance of your website.
+
+## Partials:
+
+To create reusable components, create a `partials` folder within the `layout` folder. Inside the `partials` folder, create individual files for different parts of your site, such as headers, footers, etc. Write the necessary code in these files, and then include them in the layout files using the `<%- partial() %>` tag.
+
+## Best Hexo Tutorials:
+
+Here is a playlist of the best Hexo tutorials I have found: [Hexo Tutorial Playlist](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOMJR6D25ishrSedvsguVSm)
