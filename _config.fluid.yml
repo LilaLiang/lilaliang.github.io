@@ -323,7 +323,7 @@ iconfont: //at.alicdn.com/t/font_1736178_lbnruvf0jn.css
 
 # 导航栏的相关配置
 # Navigation bar
-navbar:
+navbar: Lila's Second Brain
   # 导航栏左侧的标题，为空则按 hexo config 中 `title` 显示
   # The title on the left side of the navigation bar. If empty, it is based on `title` in hexo config
   blog_title: "Hello World"
