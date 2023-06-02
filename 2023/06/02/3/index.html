@@ -16,24 +16,25 @@
   <meta name="author" content="Lila Liang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="This note provides an overview of key concepts related to APIs, HTTP, REST, headers, stateless protocols, CRUD operations, JSON, cacheability, layered systems, and Curl.">
+    <meta name="description" content="Node.js, an open-source JavaScript runtime environment, leverages a single-threaded event loop to effectively handle concurrent operations.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="What is API?">
-<meta property="og:url" content="https://lilaliang.github.io/2023/06/01/2/index.html">
+<meta property="og:title" content="the Power of a Single-Threaded Event Loop">
+<meta property="og:url" content="https://lilaliang.github.io/2023/06/02/3/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="This note provides an overview of key concepts related to APIs, HTTP, REST, headers, stateless protocols, CRUD operations, JSON, cacheability, layered systems, and Curl.">
+<meta property="og:description" content="Node.js, an open-source JavaScript runtime environment, leverages a single-threaded event loop to effectively handle concurrent operations.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://lilaliang.github.io/img/API.png">
-<meta property="article:published_time" content="2023-06-01T08:25:48.000Z">
-<meta property="article:modified_time" content="2023-06-02T03:48:13.035Z">
+<meta property="og:image" content="https://lilaliang.github.io/img/single%20event.jfif">
+<meta property="article:published_time" content="2023-06-02T03:47:15.000Z">
+<meta property="article:modified_time" content="2023-06-02T04:01:49.939Z">
 <meta property="article:author" content="Lila Liang">
 <meta property="article:tag" content="Concepts">
+<meta property="article:tag" content="Node.js">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://lilaliang.github.io/img/API.png">
+<meta name="twitter:image" content="https://lilaliang.github.io/img/single%20event.jfif">
   
   
   
-  <title>What is API? - Hexo</title>
+  <title>the Power of a Single-Threaded Event Loop - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="What is API?"></span>
+            <span id="subtitle" data-typed-text="the Power of a Single-Threaded Event Loop"></span>
           
         </div>
 
@@ -210,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-06-01 16:25" pubdate>
-          June 1, 2023 pm
+        <time datetime="2023-06-02 11:47" pubdate>
+          June 2, 2023 am
         </time>
       </span>
     
@@ -222,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.1k words
+          6.7k words
         
       </span>
     
@@ -233,7 +234,7 @@
         
         
         
-          27 mins
+          57 mins
         
       </span>
     
@@ -271,61 +272,45 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">What is API?</h1>
+            <h1 style="display: none">the Power of a Single-Threaded Event Loop</h1>
             
             
               <div class="markdown-body">
                 
-                <p>This note provides an overview of key concepts related to APIs, HTTP, REST, headers, stateless protocols, CRUD operations, JSON, cacheability, layered systems, and Curl. <span id="more"></span></p>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ul>
-<li><strong>Definition:</strong> API stands for Application Programming Interface. It refers to a set of rules and protocols that allow different software applications to communicate with each other.</li>
-<li><strong>Types of APIs:</strong><ul>
-<li>Framework APIs: APIs provided by frameworks that allow developers to extend and customize the functionality of the framework.</li>
-<li>Package and Library APIs: APIs provided by packages and libraries that solve common problems and provide reusable code.</li>
-<li>Remote APIs: APIs like REST and GraphQL that allow communication with remote servers over a network.</li>
-<li>Web-based APIs: APIs that are accessed through web protocols, typically using HTTP.</li>
-</ul>
+                <p>Node.js, an open-source JavaScript runtime environment, leverages a single-threaded event loop to effectively handle concurrent operations. <span id="more"></span><br>This architectural model enables Node.js to scale efficiently, prioritize responsiveness, and optimize resource utilization. </p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Node.js, an open-source JavaScript runtime environment, leverages a single-threaded event loop to effectively handle concurrent operations. This architectural model enables Node.js to scale efficiently, prioritize responsiveness, and optimize resource utilization. In this note, we explore the concept of a single-threaded event loop, its effectiveness in managing concurrency, and the distinction between blocking and non-blocking operations within Node.js. Additionally, we examine the significance of I&#x2F;O operations in computer systems and their role in communication between programs and external resources.</p>
+<h2 id="A-What-is-a-Single-Threaded-Event"><a href="#A-What-is-a-Single-Threaded-Event" class="headerlink" title="A. What is a Single-Threaded Event?"></a>A. What is a Single-Threaded Event?</h2><p>A single-threaded event loop is a programming construct used in event-driven architectures to handle asynchronous operations efficiently within a single thread of execution. It is commonly employed in frameworks and environments that prioritize responsiveness and scalability, such as JavaScript’s Node.js.</p>
+<p>In a single-threaded event loop, there is a central loop that continuously iterates and processes events from an event queue. Events can be various types of asynchronous operations, such as user input, network requests, timers, or file system operations. When an event occurs, it is added to the event queue.</p>
+<p>The event loop follows a specific pattern of execution:</p>
+<ol>
+<li><strong>Event Queue:</strong> Events are added to the event queue as they occur.</li>
+<li><strong>Event Processing:</strong> The event loop continuously checks the event queue for pending events.</li>
+<li><strong>Event Handler:</strong> When an event is encountered, the associated event handler or callback function is executed.</li>
+<li><strong>Blocking and Non-Blocking Operations:</strong> Depending on the type of operation, it can be either blocking or non-blocking. Blocking operations halt the event loop until they complete, while non-blocking operations allow the event loop to continue processing other events.</li>
+<li><strong>Event Completion:</strong> After an event is processed, the loop moves on to the next event in the queue, if any.</li>
+</ol>
+<p>The event loop’s single-threaded nature ensures that each event is processed one at a time in a sequential manner. This eliminates the need for multiple threads and avoids common issues such as race conditions and deadlocks. By efficiently handling I&#x2F;O-bound operations asynchronously, the event loop maximizes resource utilization and responsiveness even in high-traffic scenarios.</p>
+<p>It’s worth noting that while the event loop operates within a single thread, certain tasks, such as computationally intensive operations, can be offloaded to worker threads or external processes to prevent blocking the event loop and maintain overall system performance.</p>
+<h2 id="B-Why-Does-This-Architecture-Handle-Concurrent-Operations-Effectively"><a href="#B-Why-Does-This-Architecture-Handle-Concurrent-Operations-Effectively" class="headerlink" title="B. Why Does This Architecture Handle Concurrent Operations Effectively?"></a>B. Why Does This Architecture Handle Concurrent Operations Effectively?</h2><p>Node.js is based on a single-threaded event loop primarily for the purpose of efficiently handling concurrent operations in an event-driven, non-blocking manner.</p>
+<p>There are several reasons why this architecture model was chosen for Node.js:</p>
+<ol>
+<li><strong>Concurrency Model:</strong> By using a single thread, Node.js can handle a large number of concurrent connections without the need for creating a separate thread for each connection. This makes it highly scalable and memory-efficient compared to traditional thread-based models.</li>
+<li><strong>Event-Driven Programming:</strong> Node.js follows an event-driven programming model, where it listens for events and responds to them asynchronously. The single-threaded event loop allows Node.js to efficiently manage and dispatch events, such as incoming requests or I&#x2F;O operations, without the overhead of thread context switching.</li>
+<li><strong>Non-Blocking I&#x2F;O:</strong> Node.js relies on non-blocking I&#x2F;O operations, which means that when a request is made to read or write data, Node.js doesn’t block the entire thread while waiting for the operation to complete. Instead, it registers a callback function and continues executing other operations. When the I&#x2F;O operation completes, the appropriate callback is invoked. This approach allows Node.js to efficiently handle multiple I&#x2F;O operations concurrently within a single thread.</li>
+<li><strong>Resource Utilization:</strong> Single-threaded event loop architecture optimizes resource utilization by minimizing the overhead associated with creating and managing multiple threads. It avoids the complexities of thread synchronization and locking mechanisms required in multi-threaded environments.</li>
+<li><strong>Simplified Programming Model:</strong> The single-threaded event loop simplifies the programming model for developers. It eliminates the need to deal with explicit thread synchronization and allows for a more straightforward approach to writing asynchronous code using callbacks, promises, or async&#x2F;await syntax.</li>
+</ol>
+<p>However, it’s important to note that while the event loop is single-threaded, Node.js can still utilize multiple threads for certain tasks through worker threads or by delegating heavy computations to external processes. This allows Node.js to take advantage of multi-core systems while still maintaining the benefits of the single-threaded event loop for handling asynchronous I&#x2F;O operations.</p>
+<h2 id="Blocking-Operations-vs-Non-Blocking-Operations"><a href="#Blocking-Operations-vs-Non-Blocking-Operations" class="headerlink" title="Blocking Operations vs. Non-Blocking Operations"></a>Blocking Operations vs. Non-Blocking Operations</h2><p>In Node.js, blocking and non-blocking operations refer to the behavior of certain functions or operations when they are invoked.</p>
+<ol>
+<li><p><strong>Blocking Operations:</strong> Blocking operations are synchronous operations that block the execution of code until they complete. When a blocking operation is called, the Node.js event loop is halted, and the thread remains occupied until the operation finishes. During this time, no other operations can be processed by the event loop. Common examples of blocking operations include file system operations that involve reading or writing data synchronously, synchronous network requests, or computationally intensive tasks.</p>
 </li>
-</ul>
-<h2 id="HTTP-and-Verbs"><a href="#HTTP-and-Verbs" class="headerlink" title="HTTP and Verbs"></a>HTTP and Verbs</h2><ul>
-<li><strong>HTTP:</strong> HTTP stands for Hypertext Transfer Protocol. It is a protocol that defines the expectations for communication between clients and servers.</li>
-<li><strong>HTTP Verbs:</strong><ul>
-<li>GET: Used to receive information and retrieve data from the server (read operation).</li>
-<li>POST: Used to submit data to the server and receive a response (create operation).</li>
-<li>PUT: Used to update existing data on the server.</li>
-<li>PATCH: Used to partially update existing data on the server.</li>
-<li>DELETE: Used to delete specific resources from the server.</li>
-</ul>
+<li><p><strong>Non-Blocking Operations:</strong> Non-blocking operations, also known as asynchronous operations, allow the execution of code to continue without waiting for the operation to complete. Instead of blocking the event loop, non-blocking operations are initiated, and a callback function or a Promise is provided to handle the result or error when the operation finishes. The event loop can continue processing other events or operations while the non-blocking operation is in progress. Once the operation completes, the associated callback or Promise is triggered. Non-blocking operations are commonly used for I&#x2F;O-related tasks, such as reading files, making network requests, or querying databases.</p>
 </li>
-</ul>
-<h2 id="Stateless-Protocol"><a href="#Stateless-Protocol" class="headerlink" title="Stateless Protocol"></a>Stateless Protocol</h2><ul>
-<li><strong>Definition:</strong> A stateless protocol is a type of communication protocol in which each transaction between a client and a server is independent and self-contained. The server does not retain any information about the client’s previous interactions or the current state of the client.</li>
-<li><strong>Advantages:</strong> Stateless protocols are scalable, lightweight, and promote fault tolerance.</li>
-<li><strong>Limitations:</strong> They are not suitable for scenarios that require maintaining a continuous session or context across multiple requests.</li>
-</ul>
-<h2 id="Headers"><a href="#Headers" class="headerlink" title="Headers"></a>Headers</h2><ul>
-<li><strong>Definition:</strong> Headers are specific sections of data that precede the main content or payload of a message or packet.</li>
-<li><strong>Function:</strong> Headers provide important information and metadata about the message, facilitating its interpretation and processing by the receiving entity.</li>
-<li><strong>Examples:</strong> In the context of HTTP, headers include fields like “Host,” “User-Agent,” and “Content-Type.”</li>
-</ul>
-<h2 id="REST-and-CRUD"><a href="#REST-and-CRUD" class="headerlink" title="REST and CRUD"></a>REST and CRUD</h2><ul>
-<li><strong>REST:</strong> REST stands for Representational State Transfer. It is an architectural style for designing networked applications and APIs.</li>
-<li><strong>CRUD:</strong> CRUD stands for Create, Read, Update, and Delete, which are the basic operations performed on data.</li>
-<li><strong>Relationship:</strong> RESTful APIs map the CRUD operations to appropriate HTTP methods (POST, GET, PUT&#x2F;PATCH, DELETE) to provide a consistent and intuitive interface for interacting with resources.</li>
-</ul>
-<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><ul>
-<li><strong>Definition:</strong> JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is commonly used for structuring data in APIs and exchanging information between a client and a server.</li>
-</ul>
-<h2 id="Layered-System"><a href="#Layered-System" class="headerlink" title="Layered System"></a>Layered System</h2><ul>
-<li><strong>Definition:</strong> A layered system is an architectural style where components are organized in layers, and each layer has specific responsibilities. Communication between layers is well-defined and follows certain protocols.</li>
-</ul>
-<h2 id="Cacheability"><a href="#Cacheability" class="headerlink" title="Cacheability"></a>Cacheability</h2><ul>
-<li><strong>Definition:</strong> Cacheability refers to the capability of storing and reusing previously obtained responses from a server. Caching can improve performance by reducing the need for repeated requests to the server.</li>
-</ul>
-<h2 id="Curl"><a href="#Curl" class="headerlink" title="Curl"></a>Curl</h2><ul>
-<li><strong>Definition:</strong> Curl is a command-line tool and library used for making requests to web servers and transferring data using various protocols such as HTTP, HTTPS, FTP, SMTP, and more.</li>
-<li><strong>Use Cases:</strong> Curl is used for sending HTTP requests, testing APIs, downloading&#x2F;uploading files, scripting and automation, and debugging network connectivity issues.</li>
-</ul>
+</ol>
+<p>The use of non-blocking operations is a fundamental aspect of Node.js to ensure high concurrency and responsiveness. By allowing the event loop to continue processing other events while waiting for I&#x2F;O operations to complete, Node.js can efficiently handle a large number of concurrent connections and avoid blocking the execution of code.</p>
+<p>Developers can choose between blocking and non-blocking variants of certain functions in Node.js. For example, the <code>readFileSync</code> function performs a blocking file read operation, while the <code>readFile</code> function provides a non-blocking alternative that takes a callback or returns a Promise to handle the result asynchronously. It is generally recommended to favor non-blocking operations in Node.js applications to maximize performance and scalability.</p>
+<h2 id="What-is-I-x2F-O-Operation"><a href="#What-is-I-x2F-O-Operation" class="headerlink" title="What is I&#x2F;O Operation?"></a>What is I&#x2F;O Operation?</h2><p>I&#x2F;O (Input&#x2F;Output) operations in the context of computer systems refer to the communication between a program and external devices or resources. Input operations involve receiving data or instructions from external sources, while output operations involve sending data or results to external destinations.</p>
 
                 
               </div>
@@ -340,6 +325,8 @@
       
         <a href="/tags/Concepts/">#Concepts</a>
       
+        <a href="/tags/Node-js/">#Node.js</a>
+      
     </div>
   
 </div>
@@ -350,8 +337,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>What is API?</div>
-      <div>https://lilaliang.github.io/2023/06/01/2/</div>
+      <div>the Power of a Single-Threaded Event Loop</div>
+      <div>https://lilaliang.github.io/2023/06/02/3/</div>
     </div>
     <div class="license-meta">
       
@@ -363,7 +350,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>June 1, 2023</div>
+          <div>June 2, 2023</div>
         </div>
       
       
@@ -395,18 +382,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/06/02/3/" title="the Power of a Single-Threaded Event Loop">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">the Power of a Single-Threaded Event Loop</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/27/1/" title="How to Create Content on a Hexo Blog?">
-                        <span class="hidden-mobile">How to Create Content on a Hexo Blog?</span>
+                      <a href="/2023/06/01/2/" title="What is API?">
+                        <span class="hidden-mobile">What is API?</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
