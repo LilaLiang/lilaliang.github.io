@@ -2,6 +2,7 @@
 title: Hello World
 index_img: /img/hello.png
 tags: [hexo]
+categories: [Tools,Hexo]
 ---
 Welcome to [Hexo](https://hexo.io/)! Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html).<!-- more -->
 
