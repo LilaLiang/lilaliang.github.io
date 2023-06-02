@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Shortcuts for HTML/CSS in Visual Studio Code</title>
+    <link href="/2023/06/02/4/"/>
+    <url>/2023/06/02/4/</url>
+    
+    <content type="html"><![CDATA[<p>Let’s get started with web development using Visual Studio Code. <span id="more"></span></p><h2 id="Shortcuts-for-HTML-x2F-CSS-in-Visual-Studio-Code"><a href="#Shortcuts-for-HTML-x2F-CSS-in-Visual-Studio-Code" class="headerlink" title="Shortcuts for HTML&#x2F;CSS in Visual Studio Code"></a>Shortcuts for HTML&#x2F;CSS in Visual Studio Code</h2><ol><li><p><strong>Add HTML template:</strong><br>Type <code>html:5</code> to generate the basic HTML template structure.</p></li><li><p><strong>Save the file:</strong><br>Type <code>Ctrl+S</code> on Windows to save the file.</p></li><li><p><strong>Link CSS:</strong><br>Add a blank line, type <code>link</code>, and press Enter. This will add the following line to your HTML file:</p><pre><code class="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;&quot;&gt;</code></pre></li><li><p><strong>Preview:</strong><br>Right-click html file, and select Open In Default Browser</p></li><li><p><strong>Inspect Webpage&#x2F;Open developer tools</strong><br>Press F12</p></li><li><p><strong>Reload the Webpage</strong><br>Press F5</p></li><li><p><strong>Link Javascript</strong><br>  On a new line before the closing </body> element, enter script:src, and then select Enter. The opening and closing tags for a script are added to your code.<script src=""></script></p></li></ol><h2 id="Some-Notices"><a href="#Some-Notices" class="headerlink" title="Some Notices"></a>Some Notices</h2><ol><li><p><strong>Scripts Elements</strong><br>The script element could be placed in the head or elsewhere in the body. However, putting script element at the end of the body section enables all the page content to display on the screen first, and then load the script.</p></li><li><p><strong>:root</strong><br>The :root selector represents the html element in the HTML page.For this kind of task, a best practice is to define a set of global CSS variables in a CSS rule with the :root selector.</p></li><li><p><strong>Fault Tolerance</strong><br>Add a noscript element after the closing &#x2F;script tag, which can be used to show a message if JavaScript is deactivated.</p></li><li><p><strong>Set Strict Mode</strong><br>Switch to strict mode to get more useful errors when you make mistakes.In VS Code, open the app.js file, and enter the following.<br>‘use strict’</p></li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>HTML&amp;CSS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>The Power of a Single-Threaded Event Loop</title>
     <link href="/2023/06/02/3/"/>
     <url>/2023/06/02/3/</url>
