@@ -1,2 +1,2 @@
 # lilaliang.github.io
-This is my technical blog built by Hexo.
+My technical blog built by Hexo.
