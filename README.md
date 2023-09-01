@@ -1,2 +1,2 @@
 # lilaliang.github.io
-This is my technical blog by Hexo.
+This is my technical blog.
